@@ -1,0 +1,338 @@
+/* === Base Reset and Body === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* === Container === */
+.home-container {
+  padding: 20px;
+  max-height: 100vh;
+  overflow-y: auto;
+  color: white;
+}
+
+/* === Header === */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 60px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index:100;
+}
+
+/* === Logo === */
+.app-logo {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 250px;
+  height: 80px;
+  z-index: 1000;
+}
+
+/* === Search Bar === */
+header input {
+  flex: 1;
+  margin: 0 20px;
+  padding: 8px 14px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+header input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* === Account Icon === */
+.account-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.account-icon:hover {
+  transform: scale(1.2);
+}
+
+/* === Pizza Grid === */
+.pizza-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Changed from auto-fill to 4 columns */
+  gap: 20px;
+  padding-right: 5px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+/* === Pizza Card === */
+.pizza-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 380px;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #f5f5f5;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pizza-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* === Pizza Image === */
+.pizza-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* === Pizza Name === */
+.pizza-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* === Pizza Price === */
+.pizza-card p {
+  font-size: 1.05rem;
+  margin: 0;
+  color: #ccc;
+  font-weight: 500;
+}
+
+/* === Buttons in Card === */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.card-buttons button {
+  flex: 1;
+  padding: 10px;
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-buttons button:hover {
+  background-color: #cf711f;
+  transform: translateY(-2px);
+}
+
+/* === Add to Cart Button === */
+.add-to-cart-button {
+  padding: 12px 24px;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #2ecc71;
+  transform: scale(1.05);
+}
+
+.add-to-cart-button .cart-icon {
+  font-size: 1.4rem;
+  margin-left: 5px;
+}
+
+.add-to-cart-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* === Scrollbar === */
+.pizza-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pizza-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.pizza-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* === Footer / Account Menu === */
+.account-menu-bottom {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-option {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.menu-option:hover {
+  color: #0056b3;
+}
+
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .pizza-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .pizza-card {
+    height: auto;
+  }
+
+  .card-buttons {
+    gap: 8px;
+  }
+
+  .add-to-cart-button {
+    padding: 10px 20px;
+  }
+
+  .app-logo {
+    width: 140px;
+  }
+
+  header input {
+    margin: 0 10px;
+    font-size: 0.95rem;
+  }
+}
+/* === Search and Menu Wrapper === */
+.search-and-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+/* === Refined Search Input (override header input if needed) === */
+.search-and-menu .search-input {
+  padding: 8px 14px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-and-menu .search-input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* === Menu Container & Dropdown === */
+.menu-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  z-index: 999;
+}
+
+.dropdown-menu a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #2c2c2c;
+}
+
+/* Optional: Adjust account icon positioning on small screens */
+@media (max-width: 600px) {
+  .search-and-menu {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    top: 38px;
+  }
+}
+
